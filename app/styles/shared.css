@@ -1,0 +1,100 @@
+* {
+  /* outline: 1px solid yellow; */
+  font-family: "Blender Pro", sans-serif;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #fff;
+  color: #000;
+}
+
+body {
+  background-color: #eb1433;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  appearance: none;
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 0.7rem;
+}
+
+button:disabled {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+input {
+  appearance: none;
+  background-color: transparent;
+  border: 5px #fff solid;
+  width: 100px;
+  height: 170px;
+  text-align: center;
+  font-size: 3rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+img,
+span,
+button {
+  display: block;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1024px;
+  margin: auto;
+  height: 100vh;
+}
+
+table {
+  font-size: 1.2rem;
+  table-layout: auto;
+}
+
+th {
+  width: 120px;
+}
+
+th,
+td {
+  text-align: start;
+}
+
+a {
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family: "Blender Pro";
+  src: url("/BlenderPro-Bold.woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+  button {
+    width: 80%;
+    margin: 0.7rem auto;
+  }
+
+  th,
+  td {
+    text-align: center;
+  }
+}

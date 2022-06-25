@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+span {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  header {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "css.lint.emptyRules": "ignore",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true
+}
