@@ -1,5 +1,4 @@
 import { createContext, useEffect } from "react";
-
 import {
   json,
   redirect,
@@ -9,13 +8,11 @@ import {
 } from "@remix-run/node";
 
 import { useLoaderData } from "@remix-run/react";
-
+import MyRecord from "~/components/MyRecord";
 import Pokedex, { links as PokedexLinks } from "~/components/Pokedex";
 import Stats, { links as StatsLinks } from "~/components/Stats";
-import MyRecord from "~/components/MyRecord";
 
 import { useImmerReducer } from "use-immer";
-
 import { prisma } from "~/utils/prisma";
 
 const initialState: Game = {
@@ -42,16 +39,18 @@ export const loader: LoaderFunction = async () => {
 };
 
 export const action: ActionFunction = async ({ request, params }) => {
-  const { values } = await request.formData();
-  console.log(params);
+  const body = await request.formData();
+  console.log("ALV", body);
 
-  await prisma.player.create({
-    data: {
-      nickname: "ALAS",
-      score: 800,
-    },
-  });
+  // await prisma.player.create({
+  //   data: {
+  //     nickname: "ALAS",
+  //     score: 800,
+  //   },
+  // });
+	
 
+	return null;
   return redirect("/leaderboard");
 };
 

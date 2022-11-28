@@ -1,6 +1,6 @@
-import { useRef, useEffect, useContext } from "react";
+import { Form, useLocation } from "@remix-run/react";
+import { useContext, useEffect, useRef } from "react";
 import { MainContext } from "~/routes/index";
-import { Form } from "@remix-run/react";
 
 const REGEX = /^[a-z0-9]+$/i;
 
@@ -8,6 +8,8 @@ const MyRecord = () => {
   const { game, dispatch } = useContext(MainContext);
   const itemsRef = useRef<Map<string, HTMLInputElement>>(null!);
 
+	 const location = useLocation();
+		
   const getMap = () => {
     if (!itemsRef.current) {
       itemsRef.current = new Map();
@@ -20,7 +22,7 @@ const MyRecord = () => {
   }, []);
 
   return (
-    <Form method="post" autoComplete="off">
+    <Form method="post" autoComplete="off" action="/?index" key={location.key}>
       <div style={{ display: "flex", gap: "1rem" }}>
         {[1, 2, 3, 4].map((field) => (
           <input
